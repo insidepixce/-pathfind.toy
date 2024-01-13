@@ -1,11 +1,22 @@
-# fly.toml
+# fly.toml app configuration file generated for pathfind-toy-cool-meadow-5335 on 2024-01-13T12:25:48+09:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
 
-app = "pathfind-toy-holy-darkness-331"
+app = "pathfinding"
+primary_region = "nrt"
 
-[[services]]
+[build]
+
+[http_service]
   internal_port = 5000
-  script = "flask run --host=0.0.0.0"
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
 
-  [[services.ports]]
-    handlers = ["http"]
-    port = 80
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 1024
