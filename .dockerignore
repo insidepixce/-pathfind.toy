@@ -1,0 +1,4 @@
+# flyctl launch added from .gitignore
+# Virtual Environment
+**/venv
+fly.toml
