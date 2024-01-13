@@ -26,7 +26,18 @@
           </div>
         </div>
         <div class="btn-div">
-          <button type="submit">저장하기</button>
+          <button class="submit-btn" type="submit">저장하기</button>
+          <button class="list-btn" type="button">게시글 목록</button>
+        </div>
+        <div class="post-list" id="postList">
+          <div class="post-item">
+            <h3>게시글 제목 1</h3>
+            <p>게시글 내용 1</p>
+            <div class="post-actions">
+              <button class="edit-btn" onclick="editPost(1)">수정</button>
+              <button class="delete-btn" onclick="deletePost(1)">삭제</button>
+            </div>
+          </div>
         </div>
       </form>
     </div>
