@@ -1,0 +1,11 @@
+# fly.toml
+
+app = "pathfind-toy-holy-darkness-331"
+
+[[services]]
+  internal_port = 5000
+  script = "flask run --host=0.0.0.0"
+
+  [[services.ports]]
+    handlers = ["http"]
+    port = 80
