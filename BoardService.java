@@ -28,7 +28,7 @@ public class BoardService {
 
     }
 
-    //페이지 검색 기능
+    //페이지 검색 기능 
     public Page<Board> boardSearchList(String searchKeyword, Pageable pageable) {
 
         return boardRepository.findByTitleContaining(searchKeyword, pageable);
