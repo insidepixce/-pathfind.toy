@@ -81,6 +81,10 @@
       border-radius: 4px;
       cursor: pointer;
     }
+
+    button:hover {
+      background-color: #45a049;
+    }
   </style>
   <body>
     <div class="layout">
@@ -121,9 +125,7 @@
         searchKeyword = ${param.searchKeyword})}"
           th:text="${page}"
         ></a>
-        <!-- 현재 페이지의 번호와 다른 번호를 가진 블럭 : 블럭을 클릭 시 해당 번호의 페이지로 이동 -->
         <strong th:if="${page == nowPage}" style="color: red"></strong>
-        <!-- 현재 페이지의 번호와 같은 번호를 가진 블럭 : 페이지 이동 없음, 블럭 색을 red로 변경 -->
       </th:block>
       <form class="search" th:action="@{/board/list}" method="get">
         <label>
