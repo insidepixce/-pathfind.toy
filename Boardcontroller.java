@@ -96,6 +96,14 @@ import org.springframework.web.multipart.MultipartFile;
                 model.addAttribute("board", boardService.boardView(id));
                 return "boardview";
             }
+            //(임의 추가) 이미지 다운로드
+            @GetMapping("/board/downloadImage/{fileName}")
+            public String downloadImage(Model model,MultipartFile file, String fileName) throws Exception {
+
+                model.addAttribute("savemessage","저장이 완료되었습니다.");
+                model.addAttribute("originalPage","/board/list");
+                return "savemessage";
+            }
 
             @GetMapping("/board/delete")
             public String boardDelete(Integer id) {
